@@ -1,0 +1,34 @@
+**********************************************************************
+* Licensed Materials - Property of IBM                               *
+*                                                                    *
+* SAMPLE                                                             *
+*                                                                    *
+* (c) Copyright IBM Corp. 2017 All Rights Reserved                   *
+*                                                                    *
+* US Government Users Restricted Rights - Use, duplication or        *
+* disclosure restricted by GSA ADP Schedule Contract with IBM Corp   *
+**********************************************************************
+         MACRO
+         ISBREGS ,
+         GBLB  &ISBREGS    Indicator that registers are defined
+         AIF   (&ISBREGS).MEXIT
+R0       EQU   0
+R1       EQU   1
+R2       EQU   2
+R3       EQU   3
+R4       EQU   4
+R5       EQU   5
+R6       EQU   6
+R7       EQU   7
+R8       EQU   8
+R9       EQU   9
+R10      EQU   10
+R11      EQU   11
+R12      EQU   12
+R13      EQU   13
+R14      EQU   14
+R15      EQU   15
+&ISBREGS SETB  1           Registers are now defined
+.MEXIT   ANOP
+         MEXIT
+         MEND

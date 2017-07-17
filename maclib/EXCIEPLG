@@ -1,0 +1,33 @@
+**********************************************************************
+* Licensed Materials - Property of IBM                               *
+*                                                                    *
+* SAMPLE                                                             *
+*                                                                    *
+* (c) Copyright IBM Corp. 2017 All Rights Reserved                   *
+*                                                                    *
+* US Government Users Restricted Rights - Use, duplication or        *
+* disclosure restricted by GSA ADP Schedule Contract with IBM Corp   *
+**********************************************************************
+         MACRO
+&NAME    EXCIEPLG
+         COPY  CCNZGBL
+         GBLA  &MY_DSASZ
+         AIF   (&MY_DSASZ EQ 0).NEXT_1
+         LR    1,13
+.NEXT_1  ANOP
+         L     13,4(,13)
+.NEXT_2  ANOP
+         AIF   (&MY_DSASZ EQ 0).NODSA
+         ST    15,16(,13)
+.NEXT_3  ANOP
+         LARL  15,&CCN_LITN
+         USING &CCN_LITN,15
+         STORAGE RELEASE,LENGTH=&MY_DSASZ,ADDR=(1)
+         DROP  15
+         L     15,16(,13)
+.NODSA   ANOP
+         L     14,12(,13)
+         LM    1,12,24(13)
+.NEXT_5  ANOP
+         BR    14
+         MEND

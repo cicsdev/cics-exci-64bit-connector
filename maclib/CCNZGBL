@@ -1,0 +1,47 @@
+**********************************************************************
+* Licensed Materials - Property of IBM                               *
+*                                                                    *
+* SAMPLE                                                             *
+*                                                                    *
+* (c) Copyright IBM Corp. 2017 All Rights Reserved                   *       
+*                                                                    *
+* US Government Users Restricted Rights - Use, duplication or        *
+* disclosure restricted by GSA ADP Schedule Contract with IBM Corp   *
+*                                                                    *
+*  MACRO-NAME  = CCNZGBL                                             *
+*  DESCRIPTIVE-NAME = METAL C GLOBAL SET SYMBOLS                     *
+*                                                                    *
+*  USAGE =   COPY CCNZGBL                                            *
+*                                                                    *
+**********************************************************************
+         GBLA  &CCN_DSASZ              DSA size of the function
+         GBLA  &CCN_SASZ               Save area size of this function
+         GBLA  &CCN_ARGS               Number of fixed parameters
+         GBLA  &CCN_RLOW               1st GPR on STM/STMG in prolog
+         GBLA  &CCN_RHIGH              2nd GPR on STM/STMG in prolog
+         GBLB  &CCN_MAIN               True if function is main
+         GBLB  &CCN_LP64               True if compiled with LP64
+         GBLB  &CCN_NAB                True if NAB needed
+.* &CCN_NAB is to indicate if there are called functions that depend on
+.* stack space being pre-allocated. When &CCN_NAB is true you'll need
+.* to add a generous amount to the size set in &CCN_DSASZ when you
+.* otbain the stack space.
+         GBLB  &CCN_ALTGPR(16)         Altered GPRs by the function
+         GBLB  &CCN_SASIG              True to gen savearea signature
+         GBLC  &CCN_PRCN               Entry symbol of the function
+         GBLC  &CCN_CSECT              CSECT name of the file
+         GBLC  &CCN_LITN               Symbol name for LTORG
+         GBLC  &CCN_BEGIN              Symbol name for function body
+         GBLC  &CCN_ARCHLVL            n in ARCH(n) option
+         GBLC  &CCN_ASCM               A=AR mode P=Primary mode
+         GBLC  &CCN_IASM_MACRO         MACRO name for all insert_asm
+         GBLB  &CCN_IASM_FRONT         True if insert_asm at front
+         GBLC  &CCN_NAB_OFFSET         Offset to NAB pointer in DSA
+         GBLB  &CCN_NAB_STORED         True if NAB pointer stored
+         GBLC  &CCN_PRCN_LONG          Full func name up to 1024 chars
+         GBLB  &CCN_STATIC             True if function is static
+         GBLB  &CCN_RENT               True if compiled with RENT
+         GBLC  &CCN_WSA_INIT           WSA initialization function name
+         GBLC  &CCN_WSA_TERM           WSA termination function name
+         GBLB  &CCN_APARSE             True to parse OS PARM
+         GBLC  &CCN_DSAUSER            Offset to user field in DSA
