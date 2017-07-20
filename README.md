@@ -209,3 +209,6 @@ Alternatively, you can include when running the link edit command at command lin
 To use the DLL, you can either:
 * Open the DLL from your C code. An example of this can be found here [dlopen() — Gain access to a dynamic link library](https://www.ibm.com/support/knowledgecenter/en/SSLTBW_2.2.0/com.ibm.zos.v2r2.bpxbd00/dlopen.htm), or
 * Compile your application with the sidedeck produced during compiled (.x file)
+
+## License
+This project is licensed under [Apache License Version 2.0](LICENSE).
