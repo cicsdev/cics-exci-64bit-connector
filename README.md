@@ -56,7 +56,9 @@ In the example above we set the CICS HLQ to `CICSTS54.CICS`, where the SDFHEXCI 
 ### 2.	Check permissions to run the build.sh script
 To run the build.sh script, ensure that the user ID running the script has permission to execute the file. If you have cloned this repository from Git directly onto z/OS these should already be set. If not, run a command such as:
 
+```shell
 $ chmod 750 build.sh
+```
 
 You should now have all required permissions to execute the script. 
 
